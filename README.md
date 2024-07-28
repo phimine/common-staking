@@ -5,11 +5,17 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 Try running some of the following tasks:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
+yarn test
+---------------|----------|----------|----------|----------|----------------|
+File           |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+---------------|----------|----------|----------|----------|----------------|
+ contracts/    |    99.41 |    85.96 |    96.97 |    96.15 |                |
+  B2Stake.sol  |    99.32 |     83.1 |    95.83 |     95.4 |... 691,702,713 |
+  FMMToken.sol |      100 |      100 |      100 |      100 |                |
+  MyERC20.sol  |      100 |       75 |      100 |      100 |                |
+---------------|----------|----------|----------|----------|----------------|
+All files      |    99.41 |    85.96 |    96.97 |    96.15 |                |
+---------------|----------|----------|----------|----------|----------------|
 ```
 
 # 系统概述
