@@ -184,6 +184,7 @@ contract B2Stake is
 
         // Effect：权限初始化、b2Token初始化、开始区块、结束区块、区块奖励数
         __AccessControl_init();
+        __Pausable_init();
         __UUPSUpgradeable_init();
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(ADMIN_ROLE, msg.sender);
@@ -289,6 +290,20 @@ contract B2Stake is
         }
         claimPaused = false;
         emit ClaimPUnpused();
+    }
+
+    /**
+     * 全局暂停
+     */
+    function pause() public onlyRole(ADMIN_ROLE) {
+        _pause();
+    }
+
+    /**
+     * 解除全局暂停
+     */
+    function unpause() public onlyRole(ADMIN_ROLE) {
+        _unpause();
     }
 
     // add pool/ update pool/ set pool weight
